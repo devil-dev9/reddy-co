@@ -1,5 +1,5 @@
 const siteMetadata = {
-    title: `Elemental`,
+    title: `Reddy & CO.`,
     siteUrl: `http://localhost`,
     capitalizeTitleOnHome: false,
     logo: `/images/logo.png`,
@@ -7,10 +7,9 @@ const siteMetadata = {
     titleImage: `/images/wall.png`,
     ogImage: `/images/wall.png`,
     twoColumnWall: true,
-    introTag: `PHOTOGRAPHER | VIDEOGRAPHER`,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-    about:
-        "Cras accumsan a lectus at tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus elementum dapibus dictum. Mauris auctor quam nec est tincidunt hendrerit. Donec pulvinar lobortis mauris. Cras vulputate ullamcorper ligula a rhoncus. Nunc venenatis elementum ligula in semper. Mauris malesuada purus nunc, et ultricies leo aliquam ac. Ut sit amet nunc id magna accumsan hendrerit in eget metus.",
+    introTag: `EVENTS| DECORATORS | CATERING | PHOTO & VIDEO | AND HIRER`,
+    description: ``,
+    about:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     author: `@_akzhy`,
     blogItemsPerPage: 10,
     portfolioItemsPerPage: 10,
@@ -26,27 +25,19 @@ const siteMetadata = {
             url: "/about",
         },
         {
-            name: "BLOG",
-            url: "/blog",
-        },
-        {
-            name: "PORTFOLIO",
+            name: "OUR WORK",
             url: "/portfolio",
         },
         {
-            name: "CONTACT",
+            name: "REACH US",
             url: "/contact",
         },
     ],
     footerLinks: [
         {
-            name: "PRIVACY POLICY",
-            url: "/privacy-policy",
-        },
-        {
-            name: "GitHub",
-            url: "https://github.com/akzhy/gatsby-starter-elemental",
-        },
+            name: "Powered Vy",
+            url: "link goes here",
+        }
     ],
     social: [
         {
@@ -55,28 +46,19 @@ const siteMetadata = {
             url: "#",
         },
         {
-            name: "Twitter",
-            icon: "/images/Twitter.svg",
-            url: "#",
-        },
-        {
             name: "Instagram",
             icon: "/images/Instagram.svg",
             url: "#",
-        },
-        {
-            name: "Youtube",
-            icon: "/images/Youtube.svg",
-            url: "#",
-        },
+        }
     ],
     contact: {
         // leave empty ('') or false to hide form
-        api_url: "https://getform.io/f/f227a36e-096a-4c6a-9963-9f1918a85bb3",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-        mail: "hi@akzhy.com",
-        phone: "000-000-0000",
-        address: "1234 \nLocation \nLocation",
+        api_url: "https://getform.io/f/cde5be38-04af-4e50-9ffc-35b172086c65",
+        description: `Reddy & Co.`,
+        mail: "reddyandc@gmail.com",
+        phone: "944-007-2939 \n809-600-9966",
+        address: "Central Bank Colony \nL.B Nagar \nHyderabad - 500074",
+        map:`<p className="whitespace-pre ml-4"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.300639273089!2d78.55580941487581!3d17.34926068810144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb98ae366b2cdf%3A0x5a809a5fcddc3dbb!2sReddy%26CO.%20Events%20And%20Decorations!5e0!3m2!1sen!2sin!4v1592316514867!5m2!1sen!2sin" width="550" height="300"></iframe></p>`,
     },
     disqus: "elemental-netlify-com",
 }
@@ -110,6 +92,12 @@ const beforeContactFormSubmit = data => {
         })
     }
 
+    if (!data.phone.match(/^\d{10}$/)) {
+        errors.push({
+            code: 5,
+            message: "Enter a valid phone number",
+        })
+    }
     if (errors.length > 0)
         return {
             result: false,
@@ -121,6 +109,7 @@ const beforeContactFormSubmit = data => {
             name: data.name,
             email: data.email,
             message: data.message,
+            phone: data.phone
         },
         result: true,
     }

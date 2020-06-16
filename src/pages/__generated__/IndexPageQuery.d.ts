@@ -13,6 +13,7 @@ export interface IndexPageQuery_site_siteMetadata_contact {
   mail: string | null;
   phone: string | null;
   address: string | null;
+  map: string | null;
 }
 
 export interface IndexPageQuery_site_siteMetadata_social {

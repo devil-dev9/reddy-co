@@ -14,6 +14,7 @@ const Form: React.FC<{ api: string }> = ({ api }) => {
     const [data, changeData] = useState({
         name: "",
         email: "",
+        phone: "",
         message: "",
     })
 
@@ -106,6 +107,23 @@ const Form: React.FC<{ api: string }> = ({ api }) => {
                 }
             />
             <TextInput
+                label="Phone Number"
+                name="phone"
+                type="phone"
+                onChange={e =>
+                    updateData({
+                        phone: e.target.value,
+                    })
+                }
+                footer={
+                    <FormMessage
+                        show={feedback[5] !== undefined}
+                        type="error"
+                        message={feedback[5]?.message}
+                    />
+                }
+            />
+            <TextInput
                 label="Message"
                 name="message"
                 type="textarea"
@@ -173,6 +191,14 @@ const Description: React.FC<{ data: ContactQuery_site_siteMetadata_contact }> = 
                             <MapPin />
                         </span>
                         <p className="whitespace-pre ml-4">{data.address}</p>
+                    </li>
+                )}
+                {data.map && (
+                    <li className="flex items-start mt-4">
+                        <span className="mt-1 text-secondary icon">
+                            <MapPin />
+                        </span>
+                        <p className="whitespace-pre ml-4"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.300639273089!2d78.55580941487581!3d17.34926068810144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb98ae366b2cdf%3A0x5a809a5fcddc3dbb!2sReddy%26CO.%20Events%20And%20Decorations!5e0!3m2!1sen!2sin!4v1592316514867!5m2!1sen!2sin" width="550" height="300"></iframe></p>
                     </li>
                 )}
                 <li>

@@ -47,6 +47,7 @@ export const query = graphql`
                     mail
                     phone
                     address
+                    map
                 }
             }
         }

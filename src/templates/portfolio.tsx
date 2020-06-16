@@ -32,12 +32,6 @@ export default function porfolio ({ location, data }: PageProps<PortfolioQuery, 
                             <h1 className="text-5xl font-bold text-color-1 lg:text-white">
                                 {data.mdx.frontmatter.title}
                             </h1>
-                            <p className="mt-1 flex items-center justify-center">
-                                <Calendar />{" "}
-                                <span className="ml-2">
-                                    {data.mdx.frontmatter.date}
-                                </span>
-                            </p>
                             <p className="mt-3 md:w-3/4 mx-auto">
                                 {data.mdx.frontmatter.description}
                             </p>
