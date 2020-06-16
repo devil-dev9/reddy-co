@@ -177,10 +177,10 @@ const Description: React.FC<{ data: ContactQuery_site_siteMetadata_contact }> = 
                 )}
                 {data.phone && (
                     <li className="flex items-center mt-4">
-                        <span className="text-secondary icon">
+                        <span className="mt-1 text-secondary icon">
                             <Phone />
                         </span>
-                        <a className="ml-4" href={"tel:" + data.phone}>
+                        <a className="whitespace-pre ml-4" href={"tel:" + data.phone}>
                             {data.phone}
                         </a>
                     </li>

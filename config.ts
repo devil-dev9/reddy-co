@@ -41,8 +41,8 @@ const siteMetadata = {
     ],
     social: [
         {
-            name: "Facebook",
-            icon: "/images/Facebook.svg",
+            name: "Youtube",
+            icon: "/images/Youtube.svg",
             url: "#",
         },
         {
